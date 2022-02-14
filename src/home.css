@@ -161,3 +161,9 @@
     height: 97%;
     background: white;
 }
+/* @media screen and (orientation: portrait){
+    body{
+        background:blue;
+    }
+
+} */
