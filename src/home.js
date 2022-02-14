@@ -64,8 +64,7 @@ const home = () => {
                     </div>
                 </div>
                 
-
-                <div className="d-flex justify-content-around">
+                <div className="d-flex justify-content-between">
 
                     <div className="border-solid">
                     </div>
