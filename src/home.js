@@ -22,6 +22,8 @@ const home = () => {
     }
     return(
         <>
+        {window.innerWidth}/
+        {window.innerHeight}
             <div className="container mt-5">
                 <button className="btn btn-primary btn-sm" value="reset" onClick={reset}><i className="bi bi-reply-all-fill"></i></button>
 
@@ -104,6 +106,14 @@ const home = () => {
 
                 <div className="spinner-wheel">
                     <div></div>
+                </div>
+
+                <div className='water-fill'>
+                <div className='water-fill2'>
+                <div className='water-fill3'>
+                    
+                    </div>
+                    </div>
                 </div>
 
                 <div className="my-4" className="box-cont">
