@@ -1,6 +1,17 @@
 #list-box{
-    margin-top:2%
+    margin-top:5%
 }
 .ibox{
+    width: 94%;
     margin-left:2%;
+    padding-left: 7px;
+    border: none;
+    background: aliceblue;
+}
+.cbox{
+    width: 1.2em;
+    height: 1.2em;
+}
+@media screen and (orientation:portrait) and (max-width:783px){
+    
 }

@@ -44,8 +44,7 @@ const List = () => {
     return(
         <div className='container'>
             <div className='row'>
-                <p id='here'></p>
-                <input placeholder='Heading' onChange={saveTitle}></input>
+                <input placeholder='Title..&#9999;' onChange={saveTitle}></input>
                 <div id="list-box">
                     <div id="1" className='mb-2'>
                         <input type="checkbox" onChange={strike} id="1" className='form-check-input cbox'></input>
