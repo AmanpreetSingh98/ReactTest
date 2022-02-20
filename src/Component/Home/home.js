@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './home.css'
 
 const home = () => {
@@ -25,6 +26,11 @@ const home = () => {
         {window.innerWidth}/
         {window.innerHeight}
             <div className="container mt-5">
+                <Link to='/list'>
+                    <button className='btn btn-light border border-dark'>TDoList</button>
+                </Link>
+                <hr/>
+
                 <button className="btn btn-primary btn-sm" value="reset" onClick={reset}><i className="bi bi-reply-all-fill"></i></button>
 
                 <div onChange={changeborderR}>
