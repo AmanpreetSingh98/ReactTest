@@ -13,5 +13,10 @@
     height: 1.2em;
 }
 @media screen and (orientation:portrait) and (max-width:783px){
-    
+    .cbox{
+        width:5%;
+    }
+    .ibox{
+        width:93%;
+    }
 }
