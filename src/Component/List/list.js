@@ -10,7 +10,7 @@ const List = () => {
     }
 
     const createField = (event) => {
-        console.log(Number(event.target.id)+1)
+        document.getElementById('here').innerText=event.code;
         
         if(event.code == 'Enter' || event.code == 'NumpadEnter'){
             
@@ -45,6 +45,7 @@ const List = () => {
     return(
         <div className='container'>
             <div className='row'>
+                <p id='here'></p>
                 <input placeholder='Heading' onChange={saveTitle}></input>
                 <div id="list-box">
                     <div id="1" className='mb-2'>
