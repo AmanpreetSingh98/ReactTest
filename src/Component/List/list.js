@@ -12,7 +12,7 @@ const List = () => {
     const createField = (event) => {
         document.getElementById('here').innerText=event.code;
         
-        if(event.code == 'Enter' || event.code == 'NumpadEnter'){
+        if(event.code == 'Enter' || event.code == 'NumpadEnter' || event.keyCode == 13){
             
             var box = document.createElement('div');
             box.id=n;
