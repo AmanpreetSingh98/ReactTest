@@ -49,8 +49,8 @@ const List = () => {
         }
     }
     const removeNote = (event) => {
-        console.log(event)
-        document.getElementById(event.nativeEvent.path[1].id).remove()
+        console.log(event.path[1].id)
+        document.getElementById('list-box').removeChild(document.getElementById(`${event.path[1].id}`))
     }
     const drag = (event) => {
 
