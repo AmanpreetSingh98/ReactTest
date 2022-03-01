@@ -77,7 +77,7 @@ class List extends Component {
                     <div id="list-box">
                         <div id="1" className='mb-2'>
                             <input type="checkbox" onChange={this.strike} id="1" className='form-check-input cbox'></input>
-                            <input onKeyDown={this.createField} id='1' className='ibox'></input>
+                            <textarea type="textarea" onKeyDown={this.createField} id='1' className='ibox' style={{height:'26px'}}></textarea>
                             <button className='cross' id="1">&#10005;</button>
                         </div>
                     </div>
