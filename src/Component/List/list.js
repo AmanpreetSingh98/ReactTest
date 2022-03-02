@@ -30,7 +30,7 @@ class List extends Component {
                 check.type="checkbox";
                 check.id=n;
                 check.className='form-check-input cbox';
-                var field = document.createElement('input');
+                var field = document.createElement('textarea');
                 field.id=n;
                 field.className='ibox';
                 var btn = document.createElement('button');
@@ -43,9 +43,15 @@ class List extends Component {
                 document.getElementById('list-box').appendChild(box);
                 n++;
                 document.getElementById(event.target.id).nextSibling.children[1].focus();
+                document.getElementById(event.target.id).children[1].value=document.getElementById(event.target.id).children[1].value.replace(/\n/g,'')
                 document.getElementById(n-1).children[0].addEventListener('change',this.strike);
                 document.getElementById(n-1).children[1].addEventListener('keydown',this.createField);
                 document.getElementById(n-1).children[2].addEventListener('click',this.removeNote);
+            }
+        }
+        else{
+            if(document.getElementById(event.target.id).children[1].value.search('\n') == 0){
+                document.getElementById(event.target.id).children[1].value=''
             }
         }
     }
@@ -77,13 +83,18 @@ class List extends Component {
                     <div id="list-box">
                         <div id="1" className='mb-2'>
                             <input type="checkbox" onChange={this.strike} id="1" className='form-check-input cbox'></input>
-                            <textarea type="textarea" onKeyDown={this.createField} id='1' className='ibox' style={{height:'26px'}}></textarea>
+                            <textarea onKeyDown={this.createField} id='1' className='ibox'>
+
+                            </textarea>
                             <button className='cross' id="1">&#10005;</button>
                         </div>
                     </div>
                     <hr/>
-                    <div id="checked">
+                    <div>
                         <p>checked</p>
+                        <div id="checked">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
