@@ -152,6 +152,10 @@ class List extends Component {
         }
         
     }
+    reset = () => {
+        localStorage.removeItem('list')
+        n = 2;
+    }
 
    
     render(){
@@ -160,7 +164,7 @@ class List extends Component {
                 <div className='row mt-3'>
                     {this.state.lt}
                 <input placeholder='Title..&#9999;' value={this.state.title} onChange={this.saveTitle} className='w-75 m-auto'></input>
-                    <p id="text"></p>
+                    <button onClick={this.reset} className='btn btn-light border border-dark w-25'>Reset</button>
                     <div id="list-box">
                         {this.renderNote()}
                     </div>
