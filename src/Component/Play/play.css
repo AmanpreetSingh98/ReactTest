@@ -1,0 +1,9 @@
+#body{
+    transition: 1s !important;
+}
+#inText:focus-visible{
+    outline: 0px !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    padding:5px
+}

@@ -29,6 +29,9 @@ const home = () => {
                 <Link to='/list'>
                     <button className='btn btn-light border border-dark'>TDoList</button>
                 </Link>
+                <Link to='/play'>
+                    <button className='btn btn-light border border-dark mx-2'>Play</button>
+                </Link>
                 <hr/>
 
                 <button className="btn btn-primary btn-sm" value="reset" onClick={reset}><i className="bi bi-reply-all-fill"></i></button>
@@ -122,7 +125,7 @@ const home = () => {
                     </div>
                 </div>
 
-                <div className="my-4" className="box-cont">
+                <div className="my-4 box-cont">
                     <div className="box-bg"></div>
                     <div className="box-white">
                     </div>

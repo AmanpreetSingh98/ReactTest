@@ -2,16 +2,49 @@ import React,{Component} from 'react';
 import './list.css';
 
 var n=2;
+if(localStorage.getItem('list')){
+    var arr = [];
+    arr = JSON.parse(localStorage.getItem('list'));
+    var n = arr.length+1;
+    console.log(arr)
+}
+else{
+    var arr = [];
+}
+
 
 class List extends Component {
     constructor(){
         super()
         this.state= {
             title:'',
-            data:'ok'
+            data:''
         }
     }
 
+    renderNote = () => {
+        if(this.state.data){
+            // var lst = JSON.parse(localStorage.getItem('list'))
+            return this.state.data.map((item) => {
+                return(
+                    <div id={item.id} className='mb-2'>
+                        <input type="checkbox" onChange={this.strike} id={item.id} className='form-check-input cbox'></input>
+                        <textarea onKeyDown={this.createField} id={item.id} className='ibox' defaultValue={item.note}></textarea>
+                        <button onClick={this.removeNote} className='cross' id={item.id}>&#10005;</button>
+                    </div>
+                )
+            })
+        }
+        else{
+            return(
+                <div id="1" className='mb-2'>
+                    <input type="checkbox" onChange={this.strike} id="1" className='form-check-input cbox'></input>
+                    <textarea onKeyDown={this.createField} id='1' className='ibox'></textarea>
+                    <button onClick={this.removeNote} className='cross' id="1">&#10005;</button>
+                </div>
+            )
+        }
+    }
     saveTitle = (event) => {
         this.setState({title:event.target.value})
         localStorage.setItem('Title',event.target.value)
@@ -40,6 +73,7 @@ class List extends Component {
                 box.appendChild(check);
                 box.appendChild(field);
                 box.appendChild(btn);
+                console.log(box)
                 document.getElementById('list-box').appendChild(box);
                 n++;
                 document.getElementById(event.target.id).nextSibling.children[1].focus();
@@ -50,8 +84,32 @@ class List extends Component {
             }
         }
         else{
+            console.log('else')
             if(document.getElementById(event.target.id).children[1].value.search('\n') == 0){
-                document.getElementById(event.target.id).children[1].value=''
+                document.getElementById(event.target.id).children[1].value='';
+                
+            }
+            else{
+                var d = event.target.id;
+                if(arr.length>0){
+                    arr.map((item) => {
+                        if(item.id==d){
+                            item.note=document.getElementById(event.target.id).children[1].value;
+                            // console.log('exists')
+                        }
+                        else{
+                            console.log('not')
+                            arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value});
+                        }
+                    })
+                }
+                else{
+                    arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value})
+                }
+                arr = [...new Map(arr.map(item => [item['id'],item])).values()]
+                console.log(arr)
+                localStorage.setItem('list',JSON.stringify(arr));
+                // this.setState({lt:ob})
             }
         }
     }
@@ -67,27 +125,44 @@ class List extends Component {
         }
     }
     removeNote = (event) => {
-        if(event.target.id=="1"){
+        if(this.state.data){
+            if(event.target.id=="1"){
+            }
+            else{
+                arr.map((item, i) => {
+                    if(item.id==event.target.id){
+                        document.getElementById(event.target.id).remove();
+                        arr.splice(i,1)
+                    }
+                    else{
+
+                    }
+                })
+            }
+            n = arr.length+1
+            localStorage.setItem('list',JSON.stringify(arr));
         }
         else{
-            document.getElementById(event.target.id).remove();
+            if(event.target.id=="1"){
+            }
+            else{
+                console.log('adfadsf')
+                document.getElementById(event.target.id).remove();
+            }
         }
+        
     }
+
    
     render(){
         return(
             <div className='container'>
                 <div className='row mt-3'>
+                    {this.state.lt}
                 <input placeholder='Title..&#9999;' value={this.state.title} onChange={this.saveTitle} className='w-75 m-auto'></input>
                     <p id="text"></p>
                     <div id="list-box">
-                        <div id="1" className='mb-2'>
-                            <input type="checkbox" onChange={this.strike} id="1" className='form-check-input cbox'></input>
-                            <textarea onKeyDown={this.createField} id='1' className='ibox'>
-
-                            </textarea>
-                            <button className='cross' id="1">&#10005;</button>
-                        </div>
+                        {this.renderNote()}
                     </div>
                     <hr/>
                     <div>
@@ -102,6 +177,8 @@ class List extends Component {
     }
     componentDidMount(){
         var title = localStorage.getItem('Title')
+        var lst = JSON.parse(localStorage.getItem('list'))
+        this.setState({data:lst})
         this.setState({title:title})
     }  
 }
