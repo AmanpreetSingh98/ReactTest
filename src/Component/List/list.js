@@ -29,7 +29,7 @@ class List extends Component {
                 return(
                     <div id={item.id} className='mb-2'>
                         <input type="checkbox" onChange={this.strike} id={item.id} className='form-check-input cbox'></input>
-                        <textarea onKeyDown={this.createField} id={item.id} className='ibox' defaultValue={item.note}></textarea>
+                        <textarea onKeyUp={this.createField} id={item.id} className='ibox' defaultValue={item.note}></textarea>
                         <button onClick={this.removeNote} className='cross' id={item.id}>&#10005;</button>
                     </div>
                 )
@@ -39,7 +39,7 @@ class List extends Component {
             return(
                 <div id="1" className='mb-2'>
                     <input type="checkbox" onChange={this.strike} id="1" className='form-check-input cbox'></input>
-                    <textarea onKeyDown={this.createField} id='1' className='ibox'></textarea>
+                    <textarea onKeyUp={this.createField} id='1' className='ibox'></textarea>
                     <button onClick={this.removeNote} className='cross' id="1">&#10005;</button>
                 </div>
             )
@@ -79,7 +79,7 @@ class List extends Component {
                 document.getElementById(event.target.id).nextSibling.children[1].focus();
                 document.getElementById(event.target.id).children[1].value=document.getElementById(event.target.id).children[1].value.replace(/\n/g,'')
                 document.getElementById(n-1).children[0].addEventListener('change',this.strike);
-                document.getElementById(n-1).children[1].addEventListener('keydown',this.createField);
+                document.getElementById(n-1).children[1].addEventListener('keyup',this.createField);
                 document.getElementById(n-1).children[2].addEventListener('click',this.removeNote);
             }
         }
