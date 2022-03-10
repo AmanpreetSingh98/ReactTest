@@ -51,6 +51,7 @@ class List extends Component {
     }
 
     createField = (event) => {
+        document.getElementById('txt').innerText=event.keyCode;
         if(event.code == 'Enter' || event.code == 'NumpadEnter' || event.keyCode == 13){
             if(document.getElementById(event.target.id).nextSibling){
                 document.getElementById(event.target.id).nextSibling.children[1].focus()
@@ -162,6 +163,7 @@ class List extends Component {
         return(
             <div className='container'>
                 <div className='row mt-3'>
+                    <p id='txt'></p>
                     {this.state.lt}
                 <input placeholder='Title..&#9999;' value={this.state.title} onChange={this.saveTitle} className='w-75 m-auto'></input>
                     <button onClick={this.reset} className='btn btn-light border border-dark w-25'>Reset</button>
