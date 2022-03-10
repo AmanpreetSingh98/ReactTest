@@ -75,21 +75,21 @@ const home = () => {
                     </div>
                 </div>
                 
-                <div className="d-flex justify-content-between">
+                <div className="d-flex">
 
                     <div className="border-solid">
                     </div>
 
-                    <div className="border-dotted">
+                    <div className="border-dotted ms-3">
                     </div>
 
-                    <div className="border-solid-dual">
+                    <div className="border-solid-dual ms-3">
                     </div>
 
-                    <div className="border-double">
+                    <div className="border-double ms-3">
                     </div>
 
-                    <div className="border-mix">
+                    <div className="border-mix ms-3">
                     </div>
                 </div>  
 
