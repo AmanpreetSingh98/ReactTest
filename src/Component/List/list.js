@@ -52,7 +52,7 @@ class List extends Component {
 
     createField = (event) => {
         document.getElementById('txt').innerText=event.keyCode;
-        if(event.keyCode == 13 || event.code == 'Enter' || event.code == 'NumpadEnter'){
+        if(event.keyCode == '13' || event.code == 'Enter' || event.code == 'NumpadEnter'){
             if(document.getElementById(event.target.id).nextSibling){
                 document.getElementById(event.target.id).nextSibling.children[1].focus()
             }
