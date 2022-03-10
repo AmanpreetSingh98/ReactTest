@@ -1,3 +1,6 @@
+#spin-box > div{
+    display:inline-block
+}
 .border-solid{
     height:80px;
     width:80px;

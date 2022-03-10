@@ -75,7 +75,7 @@ const home = () => {
                     </div>
                 </div>
                 
-                <div className="d-flex">
+                <div id="spin-box">
 
                     <div className="border-solid">
                     </div>

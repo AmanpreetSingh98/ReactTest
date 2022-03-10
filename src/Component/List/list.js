@@ -51,7 +51,8 @@ class List extends Component {
     }
 
     createField = (event) => {
-        document.getElementById('txt').innerText=event.keyCode;
+        
+        document.getElementById('txt').innerText=`keyCode: ${event.keyCode} which:${event.which}`;
         if(event.keyCode == '13' || event.code == 'Enter' || event.code == 'NumpadEnter'){
             if(document.getElementById(event.target.id).nextSibling){
                 document.getElementById(event.target.id).nextSibling.children[1].focus()
@@ -74,7 +75,6 @@ class List extends Component {
                 box.appendChild(check);
                 box.appendChild(field);
                 box.appendChild(btn);
-                console.log(box)
                 document.getElementById('list-box').appendChild(box);
                 n++;
                 document.getElementById(event.target.id).nextSibling.children[1].focus();
@@ -85,7 +85,6 @@ class List extends Component {
             }
         }
         else{
-            console.log('else')
             if(document.getElementById(event.target.id).children[1].value.search('\n') == 0){
                 document.getElementById(event.target.id).children[1].value='';
                 
@@ -99,7 +98,6 @@ class List extends Component {
                             // console.log('exists')
                         }
                         else{
-                            console.log('not')
                             arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value});
                         }
                     })
@@ -108,7 +106,6 @@ class List extends Component {
                     arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value})
                 }
                 arr = [...new Map(arr.map(item => [item['id'],item])).values()]
-                console.log(arr)
                 localStorage.setItem('list',JSON.stringify(arr));
                 // this.setState({lt:ob})
             }
@@ -147,7 +144,6 @@ class List extends Component {
             if(event.target.id=="1"){
             }
             else{
-                console.log('adfadsf')
                 document.getElementById(event.target.id).remove();
             }
         }
