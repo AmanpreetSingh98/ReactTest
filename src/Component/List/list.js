@@ -76,20 +76,20 @@ class List extends Component {
                 box.appendChild(field);
                 box.appendChild(btn);
                 document.getElementById('list-box').appendChild(box);
-                n++;
                 document.getElementById(event.target.id).nextSibling.children[1].focus();
                 document.getElementById(event.target.id).children[1].value=document.getElementById(event.target.id).children[1].value.replace(/\n/g,'')
-                document.getElementById(n-1).children[0].addEventListener('change',this.strike);
-                document.getElementById(n-1).children[1].addEventListener('keyup',this.createField);
-                document.getElementById(n-1).children[2].addEventListener('click',this.removeNote);
+                document.getElementById(n).children[0].addEventListener('change',this.strike);
+                document.getElementById(n).children[1].addEventListener('keyup',this.createField);
+                document.getElementById(n).children[2].addEventListener('click',this.removeNote);
+                n++;
             }
         }
         else{
-            if(document.getElementById(event.target.id).children[1].value.search('\n') == 0){
-                document.getElementById(event.target.id).children[1].value='';
+            // if(document.getElementById(event.target.id).children[1].value.search('\n') == 0){
+            //     document.getElementById(event.target.id).children[1].value='';
                 
-            }
-            else{
+            // }
+            // else{
                 var d = event.target.id;
                 if(arr.length>0){
                     arr.map((item) => {
@@ -108,7 +108,7 @@ class List extends Component {
                 arr = [...new Map(arr.map(item => [item['id'],item])).values()]
                 localStorage.setItem('list',JSON.stringify(arr));
                 // this.setState({lt:ob})
-            }
+            // }
         }
     }
     strike = (event) => {
@@ -154,11 +154,17 @@ class List extends Component {
         n = 2;
     }
 
+    handleKeyDown = (event) => {
+        document.getElementById('intxt').innerText = event.target.value;
+    }
+
    
     render(){
         return(
             <div className='container'>
                 <div className='row mt-3'>
+                    <input id='in' onChange={this.handleKeyDown}></input>
+                    <p id='intxt'></p>
                     <p id='txt'></p>
                     {this.state.lt}
                 <input placeholder='Title..&#9999;' value={this.state.title} onChange={this.saveTitle} className='w-75 m-auto'></input>
