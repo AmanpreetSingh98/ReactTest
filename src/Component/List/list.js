@@ -6,7 +6,6 @@ if(localStorage.getItem('list')){
     var arr = [];
     arr = JSON.parse(localStorage.getItem('list'));
     var n = arr.length+1;
-    console.log(arr)
 }
 else{
     var arr = [];
@@ -24,7 +23,6 @@ class List extends Component {
 
     renderNote = () => {
         if(this.state.data){
-            // var lst = JSON.parse(localStorage.getItem('list'))
             return this.state.data.map((item) => {
                 return(
                     <div id={item.id} className='mb-2'>
@@ -39,7 +37,7 @@ class List extends Component {
             return(
                 <div id="1" className='mb-2'>
                     <input type="checkbox" onChange={this.strike} id="1" className='form-check-input cbox'></input>
-                    <textarea onKeyUp={this.createField} id='1' className='ibox'></textarea>
+                    <textarea onKeyUp={this.createField} id='1' defaultValue="" className='ibox'></textarea>
                     <button onClick={this.removeNote} className='cross' id="1">&#10005;</button>
                 </div>
             )
@@ -52,7 +50,7 @@ class List extends Component {
 
     createField = (event) => {
         
-        document.getElementById('txt').innerText=`keyCode: ${event.keyCode} which:${event.which}`;
+        // document.getElementById('txt').innerText=`keyCode: ${event.keyCode} which:${event.which}`;
         if(event.keyCode == '13' || event.code == 'Enter' || event.code == 'NumpadEnter'){
             if(document.getElementById(event.target.id).nextSibling){
                 document.getElementById(event.target.id).nextSibling.children[1].focus()
@@ -91,7 +89,6 @@ class List extends Component {
                 arr.map((item) => {
                     if(item.id==d){
                         item.note=document.getElementById(event.target.id).children[1].value;
-                        // console.log('exists')
                     }
                     else{
                         arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value,tdecor:document.getElementById(event.target.id).children[1].style.textDecoration});
@@ -102,10 +99,7 @@ class List extends Component {
                 arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value,tdecor:document.getElementById(event.target.id).children[1].style.textDecoration})
             }
             arr = [...new Map(arr.map(item => [item['id'],item])).values()]
-            console.log(arr)
             localStorage.setItem('list',JSON.stringify(arr));
-            // this.setState({lt:ob})
-            
         }
     }
     strike = (event) => {
@@ -115,26 +109,22 @@ class List extends Component {
             arr.map((item) => {
                 if(item.id==event.target.id){
                     item.tdecor=document.getElementById(event.target.id).children[1].style.textDecoration;
-                    // console.log('exists')
                 }
                 else{
                 }
             })
             localStorage.setItem('list',JSON.stringify(arr));
-            console.log('if',arr)
         }
         else{
             document.getElementById(event.target.id).children[1].style.textDecoration='none';
             arr.map((item) => {
                 if(item.id==event.target.id){
                     item.tdecor=document.getElementById(event.target.id).children[1].style.textDecoration;
-                    // console.log('exists')
                 }
                 else{
                 }
             })
             localStorage.setItem('list',JSON.stringify(arr));
-            console.log('else',arr)
         }
     }
     removeNote = (event) => {
@@ -148,7 +138,6 @@ class List extends Component {
                         arr.splice(i,1)
                     }
                     else{
-
                     }
                 })
             }
@@ -162,37 +151,24 @@ class List extends Component {
                 document.getElementById(event.target.id).remove();
             }
         }
-        
     }
     reset = () => {
-        localStorage.removeItem('list')
         n = 2;
+        this.setState({data:''})
+        this.setState({title:''})
+        localStorage.removeItem('list')
+        localStorage.removeItem('Title')
     }
 
-    handleKeyDown = (event) => {
-        document.getElementById('intxt').innerText = event.target.value;
-    }
-
-   
     render(){
         return(
             <div className='container'>
                 <div className='row mt-3'>
-                    <input id='in' onChange={this.handleKeyDown}></input>
-                    <p id='intxt'></p>
-                    <p id='txt'></p>
-                    {this.state.lt}
-                <input placeholder='Title..&#9999;' value={this.state.title} onChange={this.saveTitle} className='w-75 m-auto'></input>
+                    {/* <p id='txt'></p> */}
+                    <input placeholder='Title..&#9999;' value={this.state.title?this.state.title:''} onChange={this.saveTitle} className='w-75 m-auto'></input>
                     <button onClick={this.reset} className='btn btn-light border border-dark w-25'>Reset</button>
                     <div id="list-box">
                         {this.renderNote()}
-                    </div>
-                    <hr/>
-                    <div>
-                        <p>checked</p>
-                        <div id="checked">
-                            
-                        </div>
                     </div>
                 </div>
             </div>
@@ -201,8 +177,8 @@ class List extends Component {
     componentDidMount(){
         var title = localStorage.getItem('Title')
         var lst = JSON.parse(localStorage.getItem('list'))
-        this.setState({data:lst})
         this.setState({title:title})
+        this.setState({data:lst})
     }  
 }
 export default List;
