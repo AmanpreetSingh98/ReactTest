@@ -29,7 +29,7 @@ class List extends Component {
                 return(
                     <div id={item.id} className='mb-2'>
                         <input type="checkbox" onChange={this.strike} id={item.id} className='form-check-input cbox'></input>
-                        <textarea onKeyUp={this.createField} id={item.id} className='ibox' defaultValue={item.note}></textarea>
+                        <textarea onKeyUp={this.createField} id={item.id} className='ibox' defaultValue={item.note} style={{textDecoration:`${item.tdecor}`}}></textarea>
                         <button onClick={this.removeNote} className='cross' id={item.id}>&#10005;</button>
                     </div>
                 )
@@ -85,41 +85,56 @@ class List extends Component {
             }
         }
         else{
-            // if(document.getElementById(event.target.id).children[1].value.search('\n') == 0){
-            //     document.getElementById(event.target.id).children[1].value='';
-                
-            // }
-            // else{
-                var d = event.target.id;
-                if(arr.length>0){
-                    arr.map((item) => {
-                        if(item.id==d){
-                            item.note=document.getElementById(event.target.id).children[1].value;
-                            // console.log('exists')
-                        }
-                        else{
-                            arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value});
-                        }
-                    })
-                }
-                else{
-                    arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value})
-                }
-                arr = [...new Map(arr.map(item => [item['id'],item])).values()]
-                localStorage.setItem('list',JSON.stringify(arr));
-                // this.setState({lt:ob})
-            // }
+            
+            var d = event.target.id;
+            if(arr.length>0){
+                arr.map((item) => {
+                    if(item.id==d){
+                        item.note=document.getElementById(event.target.id).children[1].value;
+                        // console.log('exists')
+                    }
+                    else{
+                        arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value,tdecor:document.getElementById(event.target.id).children[1].style.textDecoration});
+                    }
+                })
+            }
+            else{
+                arr.push({id:event.target.id,note:document.getElementById(event.target.id).children[1].value,tdecor:document.getElementById(event.target.id).children[1].style.textDecoration})
+            }
+            arr = [...new Map(arr.map(item => [item['id'],item])).values()]
+            console.log(arr)
+            localStorage.setItem('list',JSON.stringify(arr));
+            // this.setState({lt:ob})
+            
         }
     }
     strike = (event) => {
         var check = document.getElementById(event.target.id).children[1].style.textDecoration;
         if(check == '' || check == 'none'){
-            document.getElementById('checked').append(document.getElementById(event.target.id))
             document.getElementById(event.target.id).children[1].style.textDecoration='line-through';
+            arr.map((item) => {
+                if(item.id==event.target.id){
+                    item.tdecor=document.getElementById(event.target.id).children[1].style.textDecoration;
+                    // console.log('exists')
+                }
+                else{
+                }
+            })
+            localStorage.setItem('list',JSON.stringify(arr));
+            console.log('if',arr)
         }
         else{
-            document.getElementById('list-box').append(document.getElementById(event.target.id))
-            document.getElementById(event.target.id).children[1].style.textDecoration='none'
+            document.getElementById(event.target.id).children[1].style.textDecoration='none';
+            arr.map((item) => {
+                if(item.id==event.target.id){
+                    item.tdecor=document.getElementById(event.target.id).children[1].style.textDecoration;
+                    // console.log('exists')
+                }
+                else{
+                }
+            })
+            localStorage.setItem('list',JSON.stringify(arr));
+            console.log('else',arr)
         }
     }
     removeNote = (event) => {
