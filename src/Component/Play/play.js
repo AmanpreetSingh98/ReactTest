@@ -19,28 +19,28 @@ class Play extends Component {
     changeBorder = () => {
         
         if(count==1){
-            document.getElementById('box').style.border="3px dotted rgb(7, 189, 7)";
+            document.getElementById('box').style.border="5px dotted rgb(7, 189, 7)";
             count++;
         }
         else if(count == 2){
-            document.getElementById('box').style.border="3px dashed rgb(7, 189, 7)";
+            document.getElementById('box').style.border="5px dashed rgb(7, 189, 7)";
             count++;
         }
         else if(count == 3){
-            document.getElementById('box').style.border="3px double rgb(7, 189, 7)";
+            document.getElementById('box').style.border="5px double rgb(7, 189, 7)";
             count++;
         }
         else if(count == 4){
-            document.getElementById('box').style.border="3px groove rgb(7, 189, 7)";
+            document.getElementById('box').style.border="5px groove rgb(7, 189, 7)";
             count++;
         }
         else if(count == 5){
-            document.getElementById('box').style.border="3px solid rgb(7, 189, 7)";
+            document.getElementById('box').style.border="5px solid rgb(7, 189, 7)";
             count++;
         }
         else if(count == 6){
             count = 1;
-            document.getElementById('box').style.border="3px dotted rgb(7, 189, 7)";
+            document.getElementById('box').style.border="5px dotted rgb(7, 189, 7)";
             count++;
         }
     }
@@ -48,7 +48,7 @@ class Play extends Component {
         console.log('render')
         return(
             <div id="box">
-                <button onClick={this.changeBorder} className="w-25 mt-5 m-auto btn btn-light" id="bordr">changeBorder</button>
+                <button onClick={this.changeBorder} className="m-auto w-50 mt-5 btn btn-light" id="bordr">changeBorder</button>
             </div>
             // <div className="container w-50 m-auto">
             //     <input id='inText' onChange={this.handleText}/>
@@ -57,6 +57,7 @@ class Play extends Component {
     }
     componentDidMount() {
         console.log('compDidMount')
+        document.getElementById('box').style.height='100vh'
     }
 }
 export default Play
