@@ -8,7 +8,7 @@
     padding:5px
 }
 #box {
-    transition:1s;
+    transition:.5s cubic-bezier(0.13, 0.56, 0.5, 1.1);
     box-shadow: inset 0px 0px 16px #06ff24;
     background:black;
     border:5px solid rgb(7, 189, 7);
