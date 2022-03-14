@@ -1,6 +1,6 @@
 .form-cont{
     margin-top:15%;
-    border:1px solid blue;
+    /* border:1px solid blue; */
     height:400px;
 }
 .form-box:nth-child(2){
@@ -25,7 +25,8 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    border:1px solid red;
+    /* border:1px solid red; */
+    box-shadow:0px 0px 5px grey;
     height:350px;
     padding:7% 6%;
     transition:1s;
