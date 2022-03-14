@@ -32,6 +32,9 @@ const home = () => {
                 <Link to='/play'>
                     <button className='btn btn-light border border-dark mx-2'>Play</button>
                 </Link>
+                <Link to='/form'>
+                    <button className='btn btn-light border border-dark'>Form</button>
+                </Link>
                 <hr/>
 
                 <button className="btn btn-primary btn-sm" value="reset" onClick={reset}><i className="bi bi-reply-all-fill"></i></button>
