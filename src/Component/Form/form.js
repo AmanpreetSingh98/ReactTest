@@ -5,22 +5,15 @@ var c = 0;
 
 class Form extends Component {
     gender = (event) => {
-        
-        if(document.getElementsByClassName('gender-st').length>0){
-            if(event.target.alt=='male'){
-                document.getElementsByClassName('gender')[1].style.boxShadow='none'
-                event.target.style.boxShadow='0px 0px 5px grey'
-                console.log('male')
-            }
-            else{
-                document.getElementsByClassName('gender')[0].style.boxShadow='none'
-                event.target.style.boxShadow='0px 0px 5px grey'
-                console.log('female')
-            }
+        if(event.target.alt=='male'){
+            document.getElementsByClassName('gender')[1].style.boxShadow='none'
+            event.target.style.boxShadow='0px 0px 5px grey'
+            console.log('male')
         }
         else{
-            event.target.classList.toggle('gender-st')
-            console.log(event.target.alt)
+            document.getElementsByClassName('gender')[0].style.boxShadow='none'
+            event.target.style.boxShadow='0px 0px 5px grey'
+            console.log('female')
         }
     }
     next = (event) => {
