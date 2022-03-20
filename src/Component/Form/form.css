@@ -71,3 +71,9 @@
     width:inherit;
     height:inherit;
 }
+@media screen and (orientation:portrait){
+    #car-box{
+        margin-top:7%;
+        width:100%
+    }
+}
