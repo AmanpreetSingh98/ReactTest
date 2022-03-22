@@ -3,6 +3,8 @@ import './form.css';
 
 var url = 'https://formnode.herokuapp.com/post'
 var localurl = 'http://localhost:4546/post'
+
+var c = 0;
 class Form extends Component {
     constructor() {
         super()
@@ -60,22 +62,48 @@ class Form extends Component {
         
     }
     moveup = (event) => {
-        if(event.target.parentElement == document.getElementById('car-box').lastChild){
-            event.target.parentElement.style.marginTop='-300px'
-            var lth = document.getElementsByClassName('imgbox').length;
-            console.log(lth)
+        console.log("rnnind")
+        var lth = document.getElementsByClassName('imgbox').length-1;
+        if(c==lth){
+            c=0;
             for(var i=0; i<lth; i++){
                 document.getElementsByClassName('imgbox')[i].style.marginTop='0px';
+                document.getElementsByClassName('imgbox')[i].style.transform='scale(1)'
             }
         }
         else{
-            event.target.parentElement.style.marginTop='-300px'
+            document.getElementsByClassName('imgbox')[c].style.transform='scaleX(.1)'
+            document.getElementsByClassName('imgbox')[c].style.marginTop='-300px';
+            c++;
         }
+        
+
+        
+        // if(event.target.parentElement == document.getElementById('car-box').lastChild){
+        //     event.target.parentElement.style.marginTop='-300px'
+        //     var lth = document.getElementsByClassName('imgbox').length;
+        //     console.log(lth)
+        //     for(var i=0; i<lth; i++){
+        //         document.getElementsByClassName('imgbox')[i].style.marginTop='0px';
+        //     }
+        // }
+        // else{
+        //     event.target.parentElement.style.marginTop='-300px'
+        // }
     }
+    start = () => {
+        this.a=setInterval(this.moveup,2000)
+    }
+    stop = () => {
+        clearInterval(this.a)
+        console.log('pause')
+    }
+
     render(){
         return(
             <div className='container'>
-                <div id='car-box'>
+                {this.start()}
+                <div id='car-box' onMouseOver={this.stop} onMouseLeave={this.start}>
                     <div className='imgbox'>
                         <img onClick={this.moveup} src='https://i.ibb.co/YZVf0cM/waterdrop.jpg' className='iset' alt="img"/>    
                     </div>
