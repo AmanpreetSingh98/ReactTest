@@ -29,7 +29,6 @@ class Form extends Component {
     next = (event) => {
         event.target.parentElement.parentElement.style.display='none';
         event.target.parentElement.parentElement.nextSibling.style.display='flex';
-        event.target.parentElement.parentElement.nextSibling.style.padding='7% 6%'
         
     }
     back = (event) => {
@@ -69,11 +68,11 @@ class Form extends Component {
             c=0;
             for(var i=0; i<lth; i++){
                 document.getElementsByClassName('imgbox')[i].style.marginTop='0px';
-                document.getElementsByClassName('imgbox')[i].style.transform='scale(1)'
+                // document.getElementsByClassName('imgbox')[i].style.transform='scale(1)'
             }
         }
         else{
-            document.getElementsByClassName('imgbox')[c].style.transform='scaleX(.1)'
+            // document.getElementsByClassName('imgbox')[c].style.transform='scaleX(.1)'
             document.getElementsByClassName('imgbox')[c].style.marginTop='-300px';
             c++;
         }
@@ -98,9 +97,6 @@ class Form extends Component {
     stop = () => {
         clearInterval(this.a)
         console.log('pause')
-    }
-    st = () => {
-        document.getElementsByClassName('form-box')[0].style.padding='7% 6%'
     }
     render(){
         return(
