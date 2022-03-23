@@ -29,6 +29,7 @@ class Form extends Component {
     next = (event) => {
         event.target.parentElement.parentElement.style.display='none';
         event.target.parentElement.parentElement.nextSibling.style.display='flex';
+        event.target.parentElement.parentElement.nextSibling.style.padding='7% 6%'
         
     }
     back = (event) => {
@@ -98,11 +99,14 @@ class Form extends Component {
         clearInterval(this.a)
         console.log('pause')
     }
-
+    st = () => {
+        document.getElementsByClassName('form-box')[0].style.padding='7% 6%'
+    }
     render(){
         return(
             <div className='container'>
                 {this.start()}
+                
                 <div id='car-box' onMouseOver={this.stop} onMouseLeave={this.start}>
                     <div className='imgbox'>
                         <img onClick={this.moveup} src='https://i.ibb.co/YZVf0cM/waterdrop.jpg' className='iset' alt="img"/>    
@@ -116,7 +120,8 @@ class Form extends Component {
                     <div className='imgbox'>
                         <img onClick={this.moveup} src='https://i.ibb.co/MfwGGj6/radlig.jpg' className='iset' alt="img"/>    
                     </div>
-                </div>
+                </div> 
+                <button onClick={this.moveup} id='prev'>prev</button>
                 <button className='mt-5' onClick={this.show}>chk</button>
                 <div className='form-cont'>
                     <div className='form-box'>
@@ -259,6 +264,7 @@ class Form extends Component {
                         </div>
                     </div>
                 </div>
+                {window.onload=() => this.st()}
             </div>
         )
     }
