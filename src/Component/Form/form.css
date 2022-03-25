@@ -30,8 +30,22 @@
     padding:7% 6%;
     transition:1s;
     border-radius: 8px;
-    box-shadow: 0px 0px 6px #b2b2b2;
     border: 1px solid #d6d6d6;
+    animation:2s test infinite linear;
+}
+@keyframes test{
+    0%{
+        box-shadow: 5px 0px 6px green;
+    }
+    33%{
+        box-shadow: 0px 6px 6px red;
+    }
+    66%{
+        box-shadow: 0px 0px 6px blue;
+    }
+    100%{
+        box-shadow: 0px 0px 6px green;
+    }
 }
 #name{
     width:50%;

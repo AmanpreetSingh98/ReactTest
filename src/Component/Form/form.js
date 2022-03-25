@@ -246,7 +246,6 @@ class Form extends Component {
                         </div>
                     </div>
                 </div>
-                
             </div>
         )
     }
