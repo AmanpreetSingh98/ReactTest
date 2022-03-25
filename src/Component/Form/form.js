@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
 import './form.css';
+import {Link} from 'react-router-dom'
 
 var url = 'https://formnode.herokuapp.com/post'
 var localurl = 'http://localhost:4546/post'
 
-var c = 0;
+var c = 1;
 class Form extends Component {
     constructor() {
         super()
@@ -61,60 +62,45 @@ class Form extends Component {
         this.props.history.push('/record')
         
     }
-    moveup = (event) => {
-        console.log("rnnind")
-        var lth = document.getElementsByClassName('imgbox').length-1;
-        if(c==lth){
-            c=0;
-            for(var i=0; i<lth; i++){
-                document.getElementsByClassName('imgbox')[i].style.marginTop='0px';
-                // document.getElementsByClassName('imgbox')[i].style.transform='scale(1)'
-            }
+    moveup = () => {
+        var element = document.getElementsByClassName('imgvis');
+        if(document.getElementById('car-box').lastChild == element[0]){
+            element[0].classList.remove('imgvis')
+            document.getElementsByClassName('imgbox')[0].classList.add('imgvis')
         }
         else{
-            // document.getElementsByClassName('imgbox')[c].style.transform='scaleX(.1)'
-            document.getElementsByClassName('imgbox')[c].style.marginTop='-300px';
-            c++;
+            element[0].nextSibling.classList.add('imgvis')
+            element[0].classList.remove('imgvis')
         }
-        
-
-        
-        // if(event.target.parentElement == document.getElementById('car-box').lastChild){
-        //     event.target.parentElement.style.marginTop='-300px'
-        //     var lth = document.getElementsByClassName('imgbox').length;
-        //     console.log(lth)
-        //     for(var i=0; i<lth; i++){
-        //         document.getElementsByClassName('imgbox')[i].style.marginTop='0px';
-        //     }
-        // }
-        // else{
-        //     event.target.parentElement.style.marginTop='-300px'
-        // }
     }
     start = () => {
-        this.a=setInterval(this.moveup,2000)
+        this.img=setInterval(this.moveup,2000)
     }
     stop = () => {
-        clearInterval(this.a)
-        console.log('pause')
+        clearInterval(this.img)
+    }
+    showId = (event) => {
+        console.log(event.target.id)
     }
     render(){
         return(
             <div className='container'>
                 {this.start()}
-                
-                <div id='car-box' onMouseOver={this.stop} onMouseLeave={this.start}>
-                    <div className='imgbox'>
-                        <img onClick={this.moveup} src='https://i.ibb.co/YZVf0cM/waterdrop.jpg' className='iset' alt="img"/>    
+                <div id='car-box' onMouseOver={this.stop} onMouseLeave={this.start} >
+                    <div className='imgbox imgvis'>
+                        <img src='https://i.ibb.co/YZVf0cM/waterdrop.jpg' className='iset' alt="img"/>    
                     </div>
                     <div className='imgbox'>
-                        <img onClick={this.moveup} src='https://i.ibb.co/7YXtBx1/shoperia.jpg' className='iset' alt="img"/>    
+                        <img src='https://i.ibb.co/7YXtBx1/shoperia.jpg' className='iset' alt="img"/>
                     </div>
                     <div className='imgbox'>
-                        <img onClick={this.moveup} src='https://i.ibb.co/vjz1rJS/lightangle.jpg' className='iset' alt="img"/>    
+                        <img src='https://i.ibb.co/vjz1rJS/lightangle.jpg' className='iset' alt="img"/>    
                     </div>
                     <div className='imgbox'>
-                        <img onClick={this.moveup} src='https://i.ibb.co/MfwGGj6/radlig.jpg' className='iset' alt="img"/>    
+                        <img src='https://i.ibb.co/MfwGGj6/radlig.jpg' className='iset' alt="img"/>    
+                    </div>
+                    <div className='imgbox'>
+                        <img src='https://i.ibb.co/v41PGdY/c1.jpg' className='iset' alt="img"/>    
                     </div>
                 </div> 
                 <button onClick={this.moveup} id='prev'>prev</button>
@@ -260,7 +246,7 @@ class Form extends Component {
                         </div>
                     </div>
                 </div>
-                {window.onload=() => this.st()}
+                
             </div>
         )
     }
