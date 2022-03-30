@@ -55,27 +55,9 @@
     display: flex;
     justify-content: end;
 }
-#car-box{
-    position:relative;
-    width:50%;
-    height:300px;
-    overflow: hidden;
-}
-.imgbox{
-    width:0px;
-    float:left;
-    transition:1s, .2s width;
-    height:inherit;
-    border-radius:10px;
-    overflow: hidden;
-}
-.imgvis{
-    width:100%;
-}
-.iset{
-    width:inherit;
-    height:inherit;
-}
+
+
+
 @media screen and (orientation:portrait){
     #car-box{
         margin-top:7%;

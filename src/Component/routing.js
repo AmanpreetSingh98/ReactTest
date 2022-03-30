@@ -4,7 +4,8 @@ import Home from './Home/home';
 import List from './List/list';
 import Play from './Play/play';
 import Form from './Form/form';
-import Record from './Form/record'
+import Record from './Form/record';
+import Carousel from './Carousel/carousel';
 
 const Routing = () => {
     return(
@@ -14,6 +15,7 @@ const Routing = () => {
             <Route path='/play' component={Play}/>
             <Route path='/form' component={Form}/>
             <Route path='/record' component={Record}/>
+            <Route path='/carousel' component={Carousel}/>
         </BrowserRouter>
     )
 }

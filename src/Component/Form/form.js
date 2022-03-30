@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import './form.css';
-import {Link} from 'react-router-dom'
 
 var url = 'https://formnode.herokuapp.com/post'
 var localurl = 'http://localhost:4546/post'
@@ -62,48 +61,13 @@ class Form extends Component {
         this.props.history.push('/record')
         
     }
-    moveup = () => {
-        var element = document.getElementsByClassName('imgvis');
-        if(document.getElementById('car-box').lastChild == element[0]){
-            element[0].classList.remove('imgvis')
-            document.getElementsByClassName('imgbox')[0].classList.add('imgvis')
-        }
-        else{
-            element[0].nextSibling.classList.add('imgvis')
-            element[0].classList.remove('imgvis')
-        }
-    }
-    start = () => {
-        this.img=setInterval(this.moveup,2000)
-    }
-    stop = () => {
-        clearInterval(this.img)
-    }
+    
     showId = (event) => {
         console.log(event.target.id)
     }
     render(){
         return(
             <div className='container'>
-                {this.start()}
-                <div id='car-box' onMouseOver={this.stop} onMouseLeave={this.start} >
-                    <div className='imgbox imgvis'>
-                        <img src='https://i.ibb.co/YZVf0cM/waterdrop.jpg' className='iset' alt="img"/>    
-                    </div>
-                    <div className='imgbox'>
-                        <img src='https://i.ibb.co/7YXtBx1/shoperia.jpg' className='iset' alt="img"/>
-                    </div>
-                    <div className='imgbox'>
-                        <img src='https://i.ibb.co/vjz1rJS/lightangle.jpg' className='iset' alt="img"/>    
-                    </div>
-                    <div className='imgbox'>
-                        <img src='https://i.ibb.co/MfwGGj6/radlig.jpg' className='iset' alt="img"/>    
-                    </div>
-                    <div className='imgbox'>
-                        <img src='https://i.ibb.co/v41PGdY/c1.jpg' className='iset' alt="img"/>    
-                    </div>
-                </div> 
-                <button onClick={this.moveup} id='prev'>prev</button>
                 <button className='mt-5' onClick={this.show}>chk</button>
                 <div className='form-cont'>
                     <div className='form-box'>
