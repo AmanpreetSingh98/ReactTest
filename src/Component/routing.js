@@ -6,6 +6,7 @@ import Play from './Play/play';
 import Form from './Form/form';
 import Record from './Form/record';
 import Carousel from './Carousel/carousel';
+import Spinner from './Spinner/spinner';
 
 const Routing = () => {
     return(
@@ -16,6 +17,7 @@ const Routing = () => {
             <Route path='/form' component={Form}/>
             <Route path='/record' component={Record}/>
             <Route path='/carousel' component={Carousel}/>
+            <Route path='/spinner' component={Spinner}/>
         </BrowserRouter>
     )
 }

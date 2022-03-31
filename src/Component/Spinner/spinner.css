@@ -1,0 +1,219 @@
+#spin-box > div{
+    display:inline-block
+}
+.border-solid{
+    height:80px;
+    width:80px;
+    border-radius:50%;
+    border:5px solid rgb(239 239 239);
+    border-right:5px solid blue;
+    animation:spin 1.6s linear infinite;
+}
+.border-dotted{
+    height:80px;
+    width:80px;
+    border-radius:50%;
+    border: 5px solid rgb(245 245 245);
+    border-right: 5px dotted blue;
+    animation:spin 1.6s linear infinite;
+}
+.border-solid-dual{
+    height:80px;
+    width:80px;
+    border-radius:50%;
+    border:5px solid rgb(239 239 239);
+    border-top:5px solid blue;
+    border-bottom:5px solid blue;
+    animation:spin 1.6s linear infinite;
+}
+.border-double{
+    height:80px;
+    width:80px;
+    border-radius:50%;
+    border:5px solid rgb(202, 202, 202);
+    border-top:5px solid blue;
+    border-bottom:5px solid blue;
+    border-right: 5px double #e7ddff;
+    border-left: 5px double #e7ddff;
+    animation:spin 1.6s linear infinite;
+}
+.border-mix{
+    height:80px;
+    width:80px;
+    border-radius:50%;
+    border:5px solid rgb(202, 202, 202);
+    border-top:5px solid blue;
+    border-bottom:5px solid blue;
+    border-right:5px double blue;
+    border-left:5px double blue;
+    animation:spin 1.6s linear infinite;
+}
+#spinner1{
+    height:70px;
+    width:70px;
+    padding:3px;
+    background: conic-gradient(#1476db 90deg,#ededed 40deg);
+    border-radius:100px;
+    animation:spin 1.6s cubic-bezier(0.18, 0.2, 0.67, 0.68) infinite;
+}
+#spinner1 > div {
+    background:white;
+    height:100%;
+    width:100%;
+    border-radius:100px;
+}
+#spinner2{
+    height:70px;
+    width:70px;
+    padding:3px;
+    background: conic-gradient(white 0deg 90deg,#6000df30,#df0090);
+    border-radius:100px;
+    animation:spin 1.6s cubic-bezier(0.18, 0.2, 0.67, 0.68) infinite;
+}
+#spinner2 > div {
+    background:white;
+    height:100%;
+    width:100%;
+    border-radius:100px;
+}
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#spinner-dotted{
+    display:flex;
+    height:70px;
+    width:70px;
+    border:2px dashed #0005a1;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#spinner-dotted >div{
+    background:white;
+    height:95%;
+    width:95%;
+    border-radius:10px;
+    animation: spin2 2s linear infinite;
+    border-radius: 26%;
+}
+.spinner-dot{
+    height:80px;
+    width:80px;
+    display: flex;
+    justify-content: center;
+    border:1px solid red;
+    border-radius:50%;
+    animation:spin 2s linear infinite
+}
+.spinner-dot >div{
+    height:6px;
+    width:6px;
+    margin-top: -3px;
+    border-radius:50%;
+    background: rgb(11, 8, 182);
+}
+.spinner-wheel{
+    margin-top:5px;
+    height:100px;
+    width:100px;
+    padding:3px;
+    border-radius:50%;
+    background-image: repeating-conic-gradient(white, #240bed 25%);
+    animation:spin 2s linear infinite
+}
+.spinner-wheel >div{
+    height:100%;
+    width:100%;
+    background:white;
+    border-radius:50%;
+}
+@keyframes spin2{
+    100%{
+        transform: rotate(270deg);
+    }
+}
+@keyframes move{
+    100%{
+        margin-left:-3px;
+    }
+}
+.water-fill{
+    height:70px;
+    width:70px;
+    border-radius:50%;
+    border-left:2px solid white;
+    border-right:2px solid white;
+    border-top: 2px ridge blue;
+    border-bottom:2px ridge blue;
+    
+
+    /* animation: fill 2s linear infinite; */
+}
+.water-fill2{
+    height:62px;
+    width:62px;
+    margin-top:auto;
+    border-radius:50%;
+    border-left:2px solid white;
+    border-right:2px solid white;
+    border-top: 2px ridge blue;
+    border-bottom:2px ridge blue;
+    
+
+    /* animation: fill 2s linear infinite; */
+}
+.water-fill3{
+    height:52px;
+    width:52px;
+    margin:auto;
+    border-radius:50%;
+    border-left:2px solid white;
+    border-right:2px solid white;
+    border-top: 2px ridge blue;
+    border-bottom:2px ridge blue;
+    
+
+    /* animation: fill 2s linear infinite; */
+}
+@keyframes fill{
+    0%{
+        transform:rotate(0deg)
+    }
+    100%{
+        
+        transform:rotate(360deg)
+    }
+}
+.box-cont{
+    height: 300px;
+    width: 400px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-bg{
+    position: absolute;
+    width:470px;
+    height:100%;
+    transition: 1s;
+    margin-left:-49px;
+    border:1px solid grey;
+    background-image:repeating-linear-gradient(135deg,black,white 3%);
+    animation:move 1s linear infinite
+}
+.box-white{
+    position: absolute;
+    width: 98%;
+    height: 97%;
+    background: white;
+}
+/* @media screen and (orientation: portrait){
+    body{
+        background:blue;
+    }
+
+} */
