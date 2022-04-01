@@ -164,9 +164,8 @@ class List extends Component {
         return(
             <div className='container'>
                 <div className='row mt-3'>
-                    {/* <p id='txt'></p> */}
-                    <input placeholder='Title..&#9999;' value={this.state.title?this.state.title:''} onChange={this.saveTitle} className='w-75 m-auto'></input>
-                    <button onClick={this.reset} className='btn btn-light border border-dark w-25'>Reset</button>
+                    <input placeholder='Title..&#9999;' value={this.state.title?this.state.title:''} onChange={this.saveTitle}></input>
+                    <button onClick={this.reset} className='btn btn-primary w-25 m-auto mt-2'>Reset</button>
                     <div id="list-box">
                         {this.renderNote()}
                     </div>

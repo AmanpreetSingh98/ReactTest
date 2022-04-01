@@ -68,7 +68,7 @@ class Form extends Component {
     render(){
         return(
             <div className='container'>
-                <button className='mt-5' onClick={this.show}>chk</button>
+                {/* <button className='mt-5' onClick={this.show}>chk</button> */}
                 <div className='form-cont'>
                     <div className='form-box'>
                         <div>

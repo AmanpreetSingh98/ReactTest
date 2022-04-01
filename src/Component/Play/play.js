@@ -45,20 +45,15 @@ class Play extends Component {
         }
     }
     changeHeight = (event) => {
-        // console.log(event.target.value)
         document.getElementById('box').style.height=`${event.target.value}vh`;
     }
     render(){
         console.log('render')
         return(
-            <div id="box">
-                <button onClick={this.changeBorder} className="m-auto w-50 mt-5 btn btn-light" id="bordr">changeBorder</button>
-                <input onChange={this.changeHeight}/>
-                <input onChange={this.changeHeight} type="range" min="40" max="50" defaultValue='0' className="mt-5 form-range" />
+            <div className="container" id="box">
+                <button onClick={this.changeBorder} className="btn btn-warning w-50 mt-5" id="bordr">changeBorder</button>
+                <input onChange={this.changeHeight} type="range" min="30" max="100" defaultValue='0' className="mt-5 form-range" />
             </div>
-            // <div className="container w-50 m-auto">
-            //     <input id='inText' onChange={this.handleText}/>
-            // </div>
         )
     }
     componentDidMount() {

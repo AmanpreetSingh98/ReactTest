@@ -21,7 +21,7 @@ class Spinner extends Component{
     }
     render(){
         return(
-            <div>
+            <div className='container mt-3'>
                 <button className="btn btn-primary btn-sm" value="reset" onClick={this.reset}><i className="bi bi-reply-all-fill"></i></button>
 
                 <div onChange={this.changeborderR}>
