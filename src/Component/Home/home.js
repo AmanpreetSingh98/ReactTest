@@ -10,7 +10,6 @@ const home = () => {
             <div className="container">
                 <div className='nav-box'>
                     <div className='nav-brand'>Workspace</div>
-
                 </div>
                 <div className='d-flex justify-content-between mt-5'>
                     <Link to='/list' className='text-decoration-none'>
@@ -43,6 +42,13 @@ const home = () => {
                         </div>
                         <h6>Play</h6>
                     </Link>
+                    <Link to='/login' className='text-decoration-none'>
+                        <div className='img-box'>
+                            <i className='bi bi-lock fs-1 image'></i>
+                        </div>
+                        <h6>Login</h6>
+                    </Link>
+
                 </div>
                 <div className='footer'>
                     W--{window.innerWidth} &nbsp;

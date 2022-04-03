@@ -1,7 +1,10 @@
-import react,{Component} from "react";
+import React,{Component} from "react";
+import { render } from "react-dom";
 import './play.css'
 const color = ['red','blue','orange','pink','magenta','brown','yellow']
 var count = 1;
+
+
 class Play extends Component {
     constructor(){
         super()
@@ -62,3 +65,17 @@ class Play extends Component {
     }
 }
 export default Play
+
+
+
+                
+
+
+                
+                
+                // </form>
+
+
+
+
+
