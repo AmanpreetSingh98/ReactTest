@@ -6,15 +6,8 @@ var count = 1;
 
 
 class Play extends Component {
-    constructor(){
-        super()
-        this.state={
-            data:''
-        }
-        console.log('constructor')
-    }
 
-    handleText = (event) => {
+    handleText = () => {
         var n = color[Math.floor(Math.random()*color.length)]
         console.log(n)
         document.getElementById('inText').style.border=`2px solid ${n}`;
@@ -60,22 +53,7 @@ class Play extends Component {
         )
     }
     componentDidMount() {
-        console.log('compDidMount')
         document.getElementById('box').style.height='100vh'
     }
 }
 export default Play
-
-
-
-                
-
-
-                
-                
-                // </form>
-
-
-
-
-
