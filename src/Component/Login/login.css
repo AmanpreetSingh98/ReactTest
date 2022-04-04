@@ -15,10 +15,18 @@
     flex-direction:column;
 }
 .input-box >input{
-    display:block;
-    width:100%;
+  display: block;
+  padding: 3px 9px;
+  /* border-radius: 5px; */
+  /* border: 1px solid grey; */
+  border: none;
+  border-bottom: 2px solid grey;
+  width: 100%;
 }
-
+input:focus-visible{
+  outline:none;
+  border-bottom:2px solid blue
+}
 /* input:focus + label
 {
     transform: translate(-178px, -27px);
