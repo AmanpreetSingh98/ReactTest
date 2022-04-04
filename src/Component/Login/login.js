@@ -4,11 +4,9 @@ import './login.css'
 const Login = () => {
     const togglepass = (event) => {
         event.target.classList.toggle('bi-eye')
-        let input = event.target.nextSibling;
+        let input = event.target.parentElement.nextSibling;
         if(input.type=='password'){
             input.type='text';
-            
-
         }
         else{
             input.type='password';
