@@ -15,7 +15,7 @@ const Login = () => {
     return(
         <div className="login-cont">
             <div className="login-box p-4">
-                <h4>Login</h4>
+                <h3>Login</h3>
                 <div className="email mt-4">
                     <div className="input-box">
                         <label>Email</label>

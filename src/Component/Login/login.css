@@ -6,9 +6,13 @@
     background:#e6e6e6;
 }
 .login-box{
-    background:white;
-    border-radius:10px;
-    width:300px;
+  background: white;
+  border-radius: 10px;
+  outline: 3px double white;
+  outline-offset: 2px;
+  box-shadow: 0px 0px 8px grey;
+  border: 1px solid #aaaaaa;
+  width: 300px;
 }
 .email{
     display:flex;
@@ -27,6 +31,7 @@ input:focus-visible{
   outline:none;
   border-bottom:2px solid blue
 }
+
 /* input:focus + label
 {
     transform: translate(-178px, -27px);
