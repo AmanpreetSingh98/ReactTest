@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import './login.css'
 
 const Login = () => {
@@ -12,24 +12,25 @@ const Login = () => {
             input.type='password';
         }
     }
+    useEffect( () => {
+        document.getElementsByClassName('login-box')[0].style.transform='scale(1)';
+    })
     return(
         <div className="login-cont">
             <div className="login-box p-4">
                 <h3>Login</h3>
-                <div className="email mt-4">
-                    <div className="input-box">
-                        <label>Email</label>
-                        <input type="email"/>
-                    </div>
-                    <div className="input-box mt-3">
-                        <div className="d-flex align-items-center justify-content-between">
-                            <label>Password</label>
-                            <i className="bi bi-eye-slash fs-4" onClick={togglepass}></i>
-                        </div>
-                        <input type="password"/>
-                    </div>
-                    <button className="btn btn-light border-success mt-5">Login</button>
+                <div className="input-box mt-4">
+                    <label>Email</label>
+                    <input type="email"/>
                 </div>
+                <div className="input-box mt-3">
+                    <div className="d-flex align-items-center justify-content-between">
+                        <label>Password</label>
+                        <i className="bi bi-eye-slash fs-4" onClick={togglepass}></i>
+                    </div>
+                    <input type="password"/>
+                </div>
+                <button className="btn btn-light border-success mt-5">Login</button>
             </div>
         </div>
     )
