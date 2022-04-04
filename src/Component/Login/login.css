@@ -8,11 +8,10 @@
 .login-box{
   background: white;
   border-radius: 10px;
-  outline: 3px double white;
+  outline: 3px solid white;
   outline-offset: 2px;
-  box-shadow: 0px 0px 8px grey;
-  border: 1px solid #aaaaaa;
   width: 300px;
+  box-shadow: 0px 0px 15px #b9b9b9;
 }
 .email{
     display:flex;
