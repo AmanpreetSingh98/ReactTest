@@ -6,11 +6,7 @@ const home = () => {
 
     return(
         <>
-        
             <div className="container">
-                <div className='nav-box'>
-                    <div className='nav-brand'>Workspace</div>
-                </div>
                 <div className='row mt-4 gy-3'>
                     <Link to='/list' className='col-3 col-lg-2 text-decoration-none'>
                         <div className='img-box'>

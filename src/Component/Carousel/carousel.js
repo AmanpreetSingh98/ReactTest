@@ -40,14 +40,7 @@ class carousel extends Component{
                         <img src='https://i.ibb.co/v41PGdY/c1.jpg' className='iset' alt="img"/>    
                     </div>
                 </div>
-                <div id="cir-box">
-                    <div className="circle">
-                    </div>
-                    <div className="circle circle2">
-                    </div>
-                    <div className="circle circle3">
-                    </div>
-                </div>
+                
             </div>
         )
     }

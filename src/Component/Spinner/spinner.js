@@ -116,20 +116,16 @@ class Spinner extends Component{
                 <div className="spinner-wheel">
                     <div></div>
                 </div>
-
-                <div className='water-fill'>
-                <div className='water-fill2'>
-                <div className='water-fill3'>
-                    
+                <div id="cir-box">
+                    <div className="circle">
                     </div>
+                    <div className="circle circle2">
                     </div>
-                </div>
-
-                <div className="my-4 box-cont">
-                    <div className="box-bg"></div>
-                    <div className="box-white">
+                    <div className="circle circle3">
                     </div>
                 </div>
+
+            
             </div>
         )
     }

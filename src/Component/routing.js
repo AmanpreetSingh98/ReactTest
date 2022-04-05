@@ -7,11 +7,14 @@ import Form from './Form/form';
 import Record from './Form/record';
 import Carousel from './Carousel/carousel';
 import Spinner from './Spinner/spinner';
-import Login from './Login/login'
+import Login from './Login/login';
+import Ptc from './Practice/ptc';
+import Header from './Header/header'
 
 const Routing = () => {
     return(
         <BrowserRouter>
+        <Header/>
             <Route exact path='/' component={Home}/>
             <Route path='/list' component={List}/>
             <Route path='/play' component={Play}/>
@@ -20,6 +23,7 @@ const Routing = () => {
             <Route path='/carousel' component={Carousel}/>
             <Route path='/spinner' component={Spinner}/>
             <Route path='/login' component={Login}/>
+            <Route path='/practice' component={Ptc}/>
         </BrowserRouter>
     )
 }
