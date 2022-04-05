@@ -22,11 +22,17 @@
   border-bottom: 2px solid grey;
   width: 100%;
 }
-input:focus-visible{
+.input-box input:focus-visible{
   outline:none;
   border-bottom:2px solid blue
 }
-
+.login-box button:focus{
+  background: rgb(5 151 7);
+  color:white
+}
+.bi-eye{
+  color:red;
+}
 /* input:focus + label
 {
     transform: translate(-178px, -27px);

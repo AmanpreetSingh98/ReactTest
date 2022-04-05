@@ -30,7 +30,7 @@ const Login = () => {
                     </div>
                     <input type="password"/>
                 </div>
-                <button className="btn btn-light border-success mt-5">Login</button>
+                <button className="btn btn-light border-success mt-5 w-100">Login</button>
             </div>
         </div>
     )

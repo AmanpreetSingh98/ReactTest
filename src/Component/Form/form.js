@@ -87,8 +87,9 @@ class Form extends Component {
                                 <img src="https://i.ibb.co/wwWKL84/male.png" className='gender' alt="male" name="gender" onClickCapture={this.gender}/>
                                 <img src="https://i.ibb.co/cy3q2K8/female.png" className='ms-3 gender' alt="female" name="gender" onClick={this.gender}/>
                             </div>
-                            <div>
-                                <input type='range' className='mt-4 w-50' onChange={this.showAge} defaultValue='18' min='18' max='30' name="age"/><span>18</span>
+                            <div className='mt-4'>
+                                <label>Age</label>
+                                <input type='range' className='ms-2 w-75' onChange={this.showAge} defaultValue='18' min='18' max='30' name="age"/><span>18</span>
                             </div>
                         </div>
                         <div id="btn-box">
