@@ -4,7 +4,14 @@ import './practice.css'
 const Ptc = () => {
     const device = () => {
         let details= navigator.userAgent;
-        return details.split('(')[1].split(';')[0]
+        // return details.split('(')[1].split(';')[0]
+        let regexp = /Android/i;
+        if(regexp.test(details)){
+            return('This is a Mobile Device')
+        }
+        else{
+            return('This is a Desktop')
+        } 
     }
     return(
         <div className='container mt-3'>
@@ -15,6 +22,8 @@ const Ptc = () => {
                 
             </div>
             {device()}
+            <hr/>
+            {navigator.userAgent.split('(')[1].split(';')[0]}
             <hr/>
             {navigator.userAgent}
         </div>
