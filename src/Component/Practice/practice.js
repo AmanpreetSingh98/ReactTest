@@ -8,7 +8,9 @@ const Ptc = () => {
                 <div className='tile'>A</div>
                 <div className='tile'>B</div>
                 <div className='tile'>C</div>
+                
             </div>
+            {navigator.userAgent}
         </div>
     )
 }
