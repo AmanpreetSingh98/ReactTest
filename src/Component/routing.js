@@ -8,7 +8,7 @@ import Record from './Form/record';
 import Carousel from './Carousel/carousel';
 import Spinner from './Spinner/spinner';
 import Login from './Login/login';
-import Ptc from './Practice/ptc';
+import Ptc from './Practice/practice';
 import Header from './Header/header'
 
 const Routing = () => {

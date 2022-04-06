@@ -1,0 +1,11 @@
+.out{
+    display:flex;
+    border:2px solid red;
+}
+.tile{
+    width:100px;
+    border:1px dashed blue;
+    height:100px;
+   
+    background:aliceblue
+}
