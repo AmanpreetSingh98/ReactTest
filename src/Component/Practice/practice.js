@@ -15,6 +15,7 @@ const Ptc = () => {
                 
             </div>
             {device()}
+            {navigator.userAgent}
         </div>
     )
 }
