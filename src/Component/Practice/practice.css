@@ -6,6 +6,21 @@
     width:100px;
     border:1px dashed blue;
     height:100px;
-   
     background:aliceblue
+}
+#one{
+    height:200px;
+    width:100%;
+    background: repeating-linear-gradient(-45deg, transparent 1%,black 2% 5%);
+}
+.options > span{
+    transition:.2s;
+    border:2px solid #a6ffa0!important
+}
+.options > span:hover{
+    transition:.2s;
+    border:2px solid green!important
+}
+.green{
+    background:#a6ffa0;
 }

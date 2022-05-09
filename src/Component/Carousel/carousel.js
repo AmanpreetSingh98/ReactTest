@@ -15,7 +15,7 @@ class carousel extends Component{
         }
     }
     start = () => {
-        this.img=setInterval(this.moveup,3000)
+        this.img=setInterval(this.moveup,2000)
     }
     stop = () => {
         clearInterval(this.img)

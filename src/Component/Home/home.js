@@ -44,6 +44,12 @@ const home = () => {
                         </div>
                         <h6 className='text-center'>Login</h6>
                     </Link>
+                    <Link to='/quiz' className='col-3 col-lg-2 text-decoration-none'>
+                        <div className='img-box'>
+                            <img className='image' src='https://i.ibb.co/HBqDFBs/quiz.png'/>
+                        </div>
+                        <h6 className='text-center'>Quiz</h6>
+                    </Link>
 
                 </div>
                 <div className='footer'>

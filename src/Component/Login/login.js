@@ -12,19 +12,17 @@ const Login = () => {
             input.type='password';
         }
     }
-    // const submitbtn = (event) => {
-    //     event.target.parentElement.style.boxShadow='0px 0px 8px rgb(5 151 7)'
-    // }
     useEffect( () => {
         document.getElementsByClassName('login-box')[0].style.transform='scale(1)';
+        document.getElementsByClassName('login-box')[0].style.outline='3px solid white';
     })
     return(
         <div className="login-cont">
-            <div className="login-box p-4">
+            <div className="login-box p-4" id="log-box">
                 <h3>Login</h3>
                 <div className="input-box mt-4">
-                    <label>Email</label>
-                    <input type="email"/>
+                    <label for="email">Email</label>
+                    <input id='email' type="email"/>
                 </div>
                 <div className="input-box mt-3">
                     <div className="d-flex align-items-center justify-content-between">
@@ -33,7 +31,7 @@ const Login = () => {
                     </div>
                     <input type="password"/>
                 </div>
-                <button className="btn btn-light border-success mt-5 w-100">Login</button>
+                <button for="log-box" className="btn btn-light border-success mt-5 w-100">Login</button>
             </div>
         </div>
     )

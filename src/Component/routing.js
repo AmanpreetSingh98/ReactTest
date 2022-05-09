@@ -9,7 +9,8 @@ import Carousel from './Carousel/carousel';
 import Spinner from './Spinner/spinner';
 import Login from './Login/login';
 import Ptc from './Practice/practice';
-import Header from './Header/header'
+import Header from './Header/header';
+import Quiz from './Quiz/quiz'
 
 const Routing = () => {
     return(
@@ -24,6 +25,7 @@ const Routing = () => {
             <Route path='/spinner' component={Spinner}/>
             <Route path='/login' component={Login}/>
             <Route path='/practice' component={Ptc}/>
+            <Route path='/quiz' component={Quiz}/>
         </BrowserRouter>
     )
 }
