@@ -31,7 +31,7 @@ class Ptc extends Component {
             .then( res => res.json())
             .then( (data) => {
                 console.log(data)
-                document.getElementById('ack').innerText=data
+                document.getElementById('ack').innerText=JSON.stringify(data)
             })
         }
     }
@@ -40,7 +40,7 @@ class Ptc extends Component {
             <div className='container pt-3'>
                 <h3 className='text-center'>Quiz- add questions</h3>
                 
-                <div className='d-flex flex-column mt-4' onChange={this.collect}>
+                <div className='d-flex flex-column my-4' onChange={this.collect}>
                     <input type='text' name='question' placeholder='Question.....?'/>
                     <input type='email' name='options' placeholder='option1,option2,option3...' className='my-4' multiple/>
                     <input type='text' name='answer' placeholder='answer'/>
