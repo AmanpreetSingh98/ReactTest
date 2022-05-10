@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom'
 import './quiz.css'
 
 let url = 'https://formnode.herokuapp.com/mcq'
@@ -62,7 +63,13 @@ class Quiz extends Component {
     render(){
         return(
             <div className='container pt-3'>
-                <h3 className='text-center'>Quiz</h3>
+                <div className='d-flex'>
+                    <h3 className='text-center flex-grow-1'>Quiz</h3>
+                    <Link to='/addquiz' className='ad'>
+                        <i className='mx-2 bi bi-plus-circle-fill add-ques' title='Add questions'></i>
+                    </Link>
+                    
+                </div>
                 {this.renderdata()}
                 <div className='my-4'>
                     <button className='btn-primary rounded sub-btn' onClick={this.validate}>Submit</button>
